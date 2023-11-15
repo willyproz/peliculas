@@ -13,8 +13,9 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Peliculas en cines'),
-          centerTitle: true,
+          title: Center(
+            child: Text('Peliculas en cines'),
+          ),
           elevation: 0,
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.search_outlined))
