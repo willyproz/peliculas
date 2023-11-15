@@ -16,6 +16,14 @@ class Movie {
   double voteAverage;
   int voteCount;
 
+  get fullPosterImg {
+    if (this.posterPath != null) {
+      return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+    } else {
+      return 'https://via.placeholder.com/300x400';
+    }
+  }
+
   Movie({
     required this.adult,
     this.backdropPath,
@@ -51,7 +59,4 @@ class Movie {
         voteAverage: json["vote_average"].toDouble(),
         voteCount: json["vote_count"],
       );
-
-
 }
-
