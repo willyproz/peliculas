@@ -12,6 +12,7 @@ class MovieSlider extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 260,
+
       //color: Colors.red,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
@@ -19,11 +20,12 @@ class MovieSlider extends StatelessWidget {
           child: Text(title,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         ),
-        const SizedBox(height: 5),
+        SizedBox(height: 5),
         Expanded(
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: movies.length,
+              controller: ScrollController(),
               itemBuilder: (_, int index) => _MoviePoster(movies[index])),
         )
       ]),
