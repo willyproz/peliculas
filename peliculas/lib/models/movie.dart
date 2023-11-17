@@ -24,6 +24,14 @@ class Movie {
     }
   }
 
+  get fullBackdropPath {
+    if (this.posterPath != null) {
+      return 'https://image.tmdb.org/t/p/w500${this.backdropPath}';
+    } else {
+      return 'https://via.placeholder.com/300x400';
+    }
+  }
+
   Movie({
     required this.adult,
     this.backdropPath,
